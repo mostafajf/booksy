@@ -1,0 +1,105 @@
+[
+  {
+    "Id": "A07f1f77bcf86cd799439012",
+    "name": "Savanna",
+    "description": "My name is Savanna. I’ve been a licensed cosmetologist for five years. Although I specialize in fading, I love working with long hair just as much! In September 2019 I opened up Studio Flex. Studio Flex is located inside Chicago sports and fitness club. The Studio Flex team consist of 7 dedicated, motivated, and goal oriented team members each specializing in their own field. Services at Studio Flex are mens and woman’s haircuts and colors, lash extensions, microbladding, facials, nails, waxing, lash lifts/tints and much more! It’s with great pleasure that we can have so much talent in one space. We strive to accommodate our clients in anyway we can. Stop by to book an appointment for any of the services at Studio Flex! Your services is greatly appreciated.",
+    "shortDescription": "My name is Savanna. I’ve been a licensed cosmetologist for five years. Although I specialize in fading, I love working with long hair just as much! In September 2019 I opened up Studio Flex. Studio F",
+    "profileImage": "https://d2zdpiztbgorvt.cloudfront.net/us/124859/00eea32b69ec426991ab1627c92a96fe-Savanna-biz-photo.PNG?size=640x427",
+    "logo": null,
+    "Address": {
+      "AddsressLine": "2701 Black Rd, Main entrance to gym, Joliet, Il, 60435",
+      "Tel": "(815) 954-7321"
+    },
+    "isClosed": false,
+    "isActive": true,
+    "stars": 4,
+    "images": [
+      {
+        "caption": null,
+        "order": 0,
+        "imageUrl": "https://d2zdpiztbgorvt.cloudfront.net/us/124859/a940fd37c57142e0b55f66542ef71e2f-Savanna-inspiration.JPEG?size=360x360"
+      },
+      {
+        "caption": null,
+        "order": 0,
+        "imageUrl": "https://d2zdpiztbgorvt.cloudfront.net/us/124859/b6e2c752085c40e8bffb7196f7fb3084-Savanna-inspiration.JPEG?size=360x360"
+      },
+      {
+        "caption": null,
+        "order": 0,
+        "imageUrl": "https://d2zdpiztbgorvt.cloudfront.net/us/124859/fc1445643884462f9f9408970ed5649d-Savanna-inspiration.JPEG?size=360x360"
+      },
+      {
+        "caption": null,
+        "order": 0,
+        "imageUrl": "https://d2zdpiztbgorvt.cloudfront.net/us/124859/b7b79ae9496344b69291bd9a8ad3578c-Savanna-inspiration.JPEG?size=360x360"
+      }
+    ],
+    "operationHours": [
+      {
+        "from": "09:00",
+        "to": "12:00",
+        "day": "Sunday"
+      }
+    ],
+    "teamMembers": [
+      {
+        "name": null,
+        "profession": null
+      }
+    ],
+    "services": [
+      {
+        "serviceType": 0,
+        "serviceName": "Holiday Special",
+        "serviceDescription": "All over color, Haircut, Blowdry/Style and a Facial waxing o...",
+        "minTimes": 120,
+        "minPrice": 125
+      },
+      {
+        "serviceType": 0,
+        "serviceName": "Detailed Haircut",
+        "serviceDescription": "Detailed haircut with steam towel",
+        "minTimes": 20,
+        "minPrice": 5000
+      },
+      {
+        "serviceType": 0,
+        "serviceName": "Haircut / Beard Detail",
+        "serviceDescription": "The haircut and the beard! All haircut services come with a ...",
+        "minTimes": 35,
+        "minPrice": 2000
+      },
+      {
+        "serviceType": 0,
+        "serviceName": "Facial",
+        "serviceDescription": "First you receive a hot steam towel and a facial massage.  While steam is opening up your pores; I exfoliate all the dirt and dead skin off with",
+        "minTimes": 45,
+        "minPrice": 345
+      },
+      {
+        "serviceType": 0,
+        "serviceName": "Father / Son haircut",
+        "serviceDescription": null,
+        "minTimes": 145,
+        "minPrice": 123
+      }
+    ],
+    "reviews": [
+      {
+        "userId": 1,
+        "businnessId": "A07f1f77bcf86cd799439012",
+        "userName": "Ali",
+        "userImage": "https://d2zdpiztbgorvt.cloudfront.net/us/users/6b0c2ff10da44b978b044aa8b61677af.jpeg?size=250x250",
+        "dateCreated": null,
+        "rate": 4,
+        "review": "This was my first time going to Savanna, but I felt so comfortable and at ease. I’m happy with how my haircut came out—She really knows what she’s doing. I’d 100% recommend her for your next haircut, she’s great with scissors as well as clippers and the free hot towel is such a plus. I’ll definitely be coming back"
+      }
+    ],
+    "SocialMedia": {
+      "Telegram": "",
+      "Instagram": ""
+    },
+    "categoryId": "507f1f77bcf86cd799439012"
+  }
+]

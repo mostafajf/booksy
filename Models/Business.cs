@@ -42,6 +42,7 @@ namespace Beauty.Models
     {
         public ServiceType ServiceType { get; set; }
         public string ServiceName { get; set; }
+        public string ServiceDescription { get; set; }
         public string MinTimes { get; set; }
         public decimal MinPrice { get; set; }
     }
@@ -62,10 +63,16 @@ namespace Beauty.Models
     public class BusinesssReview
     {
         public string UserId { get; set; }
+        public string BusinnessId { get; set; }
         public string UserName { get; set; }
         public string UserImage { get; set; }
         public string DateCreated { get; set; }
         public int Rate { get; set; }
         public string Review { get; set; }
+    }
+    public class SocialMedia
+    {
+        public string Instagram { get; set; }
+        public string Telegram { get; set; }
     }
 }
