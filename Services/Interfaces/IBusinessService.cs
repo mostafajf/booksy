@@ -14,5 +14,6 @@ namespace Beauty.Services.Interfaces
         Task Update(string id, Business BusinessIn);
         Task Remove(Business BusinessIn);
         Task Remove(string id);
+        Task<List<Business>> GetNearby(long latitude, long longitude);
     }
 }

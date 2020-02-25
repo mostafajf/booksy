@@ -23,6 +23,8 @@ using Microsoft.IdentityModel.Tokens;
 using Microsoft.AspNetCore.Identity;
 using AspNetCore.Identity.Mongo;
 using AspNetCore.Identity.Mongo.Model;
+using Beauty.Services.Interfaces;
+using Beauty.Services;
 
 namespace Beauty
 {
@@ -100,6 +102,9 @@ namespace Beauty
             services.AddTransient<ISmsSender, AuthMessageSender>();
             services.AddScoped<MongoDatabase>();
             services.Configure<SMSoptions>(Configuration);
+            services.AddScoped<ICategoryService, CategoryService>();
+            services.AddScoped<IBusinessService, Beauty.Services.BusinessService>();
+
             services.AddAutoMapper(cfg =>
             {
                 cfg.AddProfile<UsersProfile>();

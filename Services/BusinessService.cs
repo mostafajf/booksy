@@ -2,13 +2,16 @@
 using Beauty.Models;
 using Beauty.Services.Interfaces;
 using Microsoft.Extensions.Configuration;
+using MongoDB.Bson;
 using MongoDB.Driver;
+using MongoDB.Driver.GeoJsonObjectModel;
+
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace Businesssy.Services
+namespace Beauty.Services
 {
     public class BusinessService : IBusinessService
     {
@@ -48,6 +51,15 @@ namespace Businesssy.Services
         public async Task Remove(string id)
         {
             await businesses.DeleteOneAsync(Business => Business.Id == id);
+        }
+
+        public async Task<List<Business>> GetNearby(long latitude, long longitude)
+        {
+            var point = GeoJson.Point(GeoJson.Geographic(latitude, longitude)); //long, lat
+            var builder = Builders<Business>.Filter;
+            var filter = builder.Near(bs => bs.Location, point, minDistance: 10);
+            return (await businesses.FindAsync(filter)).ToList();
+
         }
     }
 }
