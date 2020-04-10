@@ -11,8 +11,8 @@
       "Tel": "(815) 954-7321"
     },
     "Location": {
-      "Latitude": "35.8001490",
-      "Longitude": "50.884762"
+      "type": "Point",
+      "coordinates": [ 35.8001490, 50.884762 ]
     },
     "IsClosed": false,
     "IsActive": true,

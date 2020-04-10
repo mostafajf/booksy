@@ -1,5 +1,6 @@
 ﻿using Microsoft.Extensions.Configuration;
 using MongoDB.Driver;
+using Pluralize.NET;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -17,7 +18,9 @@ namespace Beauty.Data
         }
         public IMongoCollection<T> GetCollection<T>()
         {
-            return db.GetCollection<T>(nameof(T));
+
+            IPluralize pluralizer = new Pluralizer();
+            return db.GetCollection<T>(pluralizer.Pluralize(typeof(T).Name));
         }
 
     }

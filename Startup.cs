@@ -25,6 +25,8 @@ using AspNetCore.Identity.Mongo;
 using AspNetCore.Identity.Mongo.Model;
 using Beauty.Services.Interfaces;
 using Beauty.Services;
+using MongoDB.Bson.Serialization;
+using MongoDB.Driver;
 
 namespace Beauty
 {
@@ -40,6 +42,9 @@ namespace Beauty
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
+            BsonClassMap.RegisterClassMap<Category>();
+            BsonClassMap.RegisterClassMap<Business>();
+
             services.AddIdentityMongoDbProvider<ApplicationUser, MongoRole>(identityOptions =>
             {
                 identityOptions.Password.RequiredLength = 3;
@@ -90,6 +95,8 @@ namespace Beauty
                   ClockSkew = TimeSpan.Zero // remove delay of token when expire
               };
           });
+           
+
             services.Configure<IdentityOptions>(cfg =>
             {
                 cfg.Password.RequireDigit = false;
@@ -100,11 +107,12 @@ namespace Beauty
             });
 
             services.AddTransient<ISmsSender, AuthMessageSender>();
+            // I think singleton will be fine
             services.AddScoped<MongoDatabase>();
             services.Configure<SMSoptions>(Configuration);
             services.AddScoped<ICategoryService, CategoryService>();
             services.AddScoped<IBusinessService, Beauty.Services.BusinessService>();
-
+            services.AddScoped<InitData>();
             services.AddAutoMapper(cfg =>
             {
                 cfg.AddProfile<UsersProfile>();

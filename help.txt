@@ -1,0 +1,2 @@
+mongoexport  -d Beauty -c Users  -o c:\users.json  --jsonArray
+mongoimport  /d Beauty /c Businesses  /file c:\Businesses.json  --jsonArray

@@ -6,9 +6,14 @@ using System.Threading.Tasks;
 
 namespace Beauty.Models
 {
+    
     public class Category : EntityBase
     {
         [BsonElement("Name")]
         public string Name { get; set; }
+        public Category()
+        {
+           
+        }
     }
 }

@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Beauty.Services.Interfaces
 {
-    interface IBusinessService
+    public interface IBusinessService
     {
         Task<List<Business>> Get();
         Task<Business> Get(string id);

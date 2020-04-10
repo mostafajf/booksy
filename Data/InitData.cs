@@ -11,6 +11,7 @@ using System.IO;
 using System.Linq;
 using System.Text.Json;
 using System.Threading.Tasks;
+using MongoDB.Bson;
 
 namespace Beauty.Data
 {
@@ -19,16 +20,12 @@ namespace Beauty.Data
         private readonly IMongoCollection<Business> businesses;
         private readonly IWebHostEnvironment environment;
         private readonly IMongoCollection<Category> categories;
-        private readonly ICategoryService categoryService;
-        private readonly IBusinessService bussinessService;
 
-
-        InitData(MongoDatabase db, IWebHostEnvironment environment, ICategoryService cs, IBusinessService bs)
+        public InitData(MongoDatabase db, IWebHostEnvironment env)
         {
             businesses = db.GetCollection<Business>();
             categories = db.GetCollection<Category>();
-            categoryService = cs;
-            bussinessService = bs;
+            environment = env;
         }
         public void GenerateEssentialData()
         {
@@ -37,17 +34,39 @@ namespace Beauty.Data
         public void GenerateTestData()
         {
             GenerateCategories();
-
+            GenerateBusinesses();
         }
         private void GenerateCategories()
         {
-            var options = new JsonSerializerOptions
+            if (categories.CountDocuments(ct => true) == 0)
             {
-                WriteIndented = true
-            };
+                var options = new JsonSerializerOptions
+                {
+                    WriteIndented = true,
+                };
 
-            var jsonString = File.ReadAllText(Path.Combine(environment.ContentRootPath, "Data", "Test", "Categories.json"));
-            var jsonModel = JsonSerializer.Deserialize<List<Category>>(jsonString, options);
+                var jsonString = File.ReadAllText(Path.Combine(environment.ContentRootPath, "Data", "Test", "Categories.json"));
+                var jsonModel = JsonSerializer.Deserialize<List<Category>>(jsonString, options);
+                categories.InsertMany(jsonModel);
+            }
+
+        }
+        private void GenerateBusinesses()
+        {
+            if (businesses.CountDocuments(ct => true) == 0)
+            {
+                var options = new JsonSerializerOptions
+                {
+                    WriteIndented = true,
+                    IgnoreNullValues=true,
+                    
+                };
+                
+                var jsonString = File.ReadAllText(Path.Combine(environment.ContentRootPath, "Data", "Test", "Businesses.json"));
+                var jsonModel = JsonSerializer.Deserialize<List<Business>>(jsonString, options);
+                businesses.InsertMany(jsonModel);
+            }
+
         }
     }
 }
